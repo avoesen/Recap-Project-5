@@ -11,6 +11,6 @@ export default createGlobalStyle`
     font-family: system-ui;
     max-width: 700px;
     margin: auto;
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
   }
 `;
