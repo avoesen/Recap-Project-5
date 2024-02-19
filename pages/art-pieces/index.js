@@ -1,5 +1,5 @@
 import ArtPieces from "@/components/ArtPieces";
 
-export default function ArtPiecePage({ pieces }) {
-  return <ArtPieces pieces={pieces} />;
+export default function ArtPiecePage({ pieces, onToggleFavorite }) {
+  return <ArtPieces pieces={pieces} onToggleFavorite={onToggleFavorite} />;
 }

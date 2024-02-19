@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
+import FavoriteButton from "../FavoriteButton";
 
 export default function ArtPiecePreview({
   width,
@@ -7,6 +8,7 @@ export default function ArtPiecePreview({
   image,
   title,
   artist,
+  onToggleFavorite,
 }) {
   //console.log(artist, title, image);
   return (
@@ -14,6 +16,7 @@ export default function ArtPiecePreview({
       <StyledImage src={image} width={width} height={height} alt={title} />
       <StyledTitle>{title}</StyledTitle>
       <h4>by {artist}</h4>
+      <FavoriteButton onToggleFavorite={onToggleFavorite} />
     </Card>
   );
 }

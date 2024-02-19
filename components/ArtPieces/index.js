@@ -1,7 +1,7 @@
 import ArtPiecePreview from "../ArtPiecePreview";
 import styled from "styled-components";
 
-export default function ArtPieces({ pieces }) {
+export default function ArtPieces({ pieces, onToggleFavorite }) {
   return (
     <>
       <StyledUl>
@@ -13,6 +13,8 @@ export default function ArtPieces({ pieces }) {
             title={piece.name}
             height={piece.dimensions.height}
             width={piece.dimensions.width}
+            onToggleFavorite={onToggleFavorite}
+            slug={piece.slug}
           />
         ))}
       </StyledUl>
