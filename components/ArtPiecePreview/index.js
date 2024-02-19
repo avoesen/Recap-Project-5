@@ -8,7 +8,7 @@ export default function ArtPiecePreview({
   title,
   artist,
 }) {
-  console.log(artist, title, image);
+  //console.log(artist, title, image);
   return (
     <Card>
       <StyledImage src={image} width={width} height={height} alt={title} />
