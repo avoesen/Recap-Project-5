@@ -12,5 +12,6 @@ export default createGlobalStyle`
     max-width: 700px;
     margin: auto;
     /* background-color: lightgreen; */
+    padding-bottom: 4rem;
   }
 `;

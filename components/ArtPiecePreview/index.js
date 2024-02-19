@@ -5,8 +5,8 @@ import FavoriteButton from "../FavoriteButton";
 
 export default function ArtPiecePreview({ onToggleFavorite, pieces }) {
   const { name, imageSource, artist, isFavorite, slug, dimensions } = pieces;
-  //const { width, height } = dimensions;
-  console.log(pieces);
+  const { width, height } = dimensions;
+ 
 
   return (
     <Card>

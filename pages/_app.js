@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (data) {
-      setArtPiecesInfo(data.map((piece) => ({ ...piece, isFavorite: false })));
+      setArtPiecesInfo(data.map((piece) => ({ ...piece, isFavorite: false, comments: [] })));
     }
   }, [data]);
 
@@ -39,6 +39,7 @@ export default function App({ Component, pageProps }) {
             {...pageProps}
             pieces={artPiecesInfo}
             onToggleFavorite={onToggleFavorite}
+            setArtPiecesInfo={setArtPiecesInfo}
           />
         </Layout>
       </>
