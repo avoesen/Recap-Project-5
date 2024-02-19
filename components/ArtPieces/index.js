@@ -15,6 +15,7 @@ export default function ArtPieces({ pieces, onToggleFavorite }) {
             width={piece.dimensions.width}
             onToggleFavorite={onToggleFavorite}
             slug={piece.slug}
+            isFavorite={piece.isFavorite}
           />
         ))}
       </StyledUl>

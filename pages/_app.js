@@ -27,17 +27,18 @@ export default function App({ Component, pageProps }) {
     setArtPiecesInfo(artPiecesInfo.map((piece) => piece.slug === id ? {...piece, isFavorite: !piece.isFavorite} : piece))
     console.log(artPiecesInfo)
   }
-
-  return (
-    <>
-      <Layout>
-        <GlobalStyle />
-        <Component
-          {...pageProps}
-          pieces={data}
-          onToggleFavorite={onToggleFavorite}
-        />
-      </Layout>
-    </>
-  );
+  if(artPiecesInfo) {
+    return (
+      <>
+        <Layout>
+          <GlobalStyle />
+          <Component
+            {...pageProps}
+            pieces={artPiecesInfo}
+            onToggleFavorite={onToggleFavorite}
+          />
+        </Layout>
+      </>
+    );
+  }
 }

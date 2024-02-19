@@ -9,6 +9,8 @@ export default function ArtPiecePreview({
   title,
   artist,
   onToggleFavorite,
+  slug, 
+  isFavorite
 }) {
   //console.log(artist, title, image);
   return (
@@ -16,7 +18,7 @@ export default function ArtPiecePreview({
       <StyledImage src={image} width={width} height={height} alt={title} />
       <StyledTitle>{title}</StyledTitle>
       <h4>by {artist}</h4>
-      <FavoriteButton onToggleFavorite={onToggleFavorite} />
+      <FavoriteButton onToggleFavorite={onToggleFavorite} slug={(slug)} isFavorite={isFavorite}/>
     </Card>
   );
 }
