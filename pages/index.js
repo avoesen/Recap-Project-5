@@ -1,10 +1,9 @@
-import ArtPieces from "@/components/ArtPieces";
 import Spotlight from "@/components/Spotlight";
 
-export default function SpotlightPage({ pieces }) {
+export default function SpotlightPage({ pieces, onToggleFavorite }) {
   return (
     <>
-      <Spotlight pieces={pieces} />
+      <Spotlight pieces={pieces} onToggleFavorite={onToggleFavorite} />
     </>
   );
 }
