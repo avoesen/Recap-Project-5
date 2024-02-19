@@ -1,27 +1,33 @@
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 import FavoriteButton from "../FavoriteButton";
 
-export default function ArtPiecePreview({
-  width,
-  height,
-  image,
-  title,
-  artist,
-  onToggleFavorite,
-  slug, 
-  isFavorite
-}) {
-  //console.log(artist, title, image);
+export default function ArtPiecePreview({ onToggleFavorite, pieces }) {
+  const { name, imageSource, artist, isFavorite, slug, dimensions } = pieces;
+  //const { width, height } = dimensions;
+  console.log(pieces);
+
   return (
     <Card>
-      <StyledImage src={image} width={width} height={height} alt={title} />
-      <StyledTitle>{title}</StyledTitle>
+      <StyledLink href={`/art-pieces/${slug}`}>
+        <StyledImage src={imageSource} width={350} height={350} alt={name} />
+        <StyledTitle>{name}</StyledTitle>
+      </StyledLink>
       <h4>by {artist}</h4>
-      <FavoriteButton onToggleFavorite={onToggleFavorite} slug={(slug)} isFavorite={isFavorite}/>
+      <FavoriteButton
+        onToggleFavorite={onToggleFavorite}
+        slug={slug}
+        isFavorite={isFavorite}
+      />
     </Card>
   );
 }
+
+const StyledLink = styled(Link)`
+  color: #000000;
+  text-decoration: none;
+`;
 
 const StyledTitle = styled.h3`
   align-self: center;

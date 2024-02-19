@@ -1,26 +1,25 @@
-import styled from "styled-components"
-import Heart from "../../assets/heart.svg"
+import styled from "styled-components";
+import Heart from "../../assets/heart.svg";
 
-export default function FavoriteButton({isFavorite, onToggleFavorite, slug}) {
-    // console.log(slug)
-    return (
-      <>
-        <StyledButton onClick={() => onToggleFavorite(slug)}>
-          <StyledHeart isFavorite={isFavorite} width={40} />
-        </StyledButton>
-      </>
-    );
+export default function FavoriteButton({ isFavorite, onToggleFavorite, slug }) {
+  // console.log(slug)
+  return (
+    <>
+      <StyledButton onClick={() => onToggleFavorite(slug)}>
+        <StyledHeart $isfavorite={isFavorite} width={40} />
+      </StyledButton>
+    </>
+  );
 }
 
 const StyledHeart = styled(Heart)`
-fill: ${(props) => (props.isFavorite? "black": "white")}; 
+  fill: ${(props) => (props.$isfavorite ? "black" : "white")};
 
-&:hover {
-    fill: aquamarine; 
-}
-
-`
+  &:hover {
+    fill: aquamarine;
+  }
+`;
 const StyledButton = styled.button`
-    background-color: transparent;
-    border: none; 
-`
+  background-color: transparent;
+  border: none;
+`;
